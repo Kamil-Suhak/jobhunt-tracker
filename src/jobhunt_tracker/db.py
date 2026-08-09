@@ -157,5 +157,5 @@ def get_status_counts(db_path: Optional[Path] = None) -> dict[str, int]:
         )
         counts = {status.value: 0 for status in ApplicationStatus}
         for row in cursor.fetchall():
-            counts[row["status"]] = row["count"]
+            counts[row["status"].capitalize()] = row["count"]
         return counts

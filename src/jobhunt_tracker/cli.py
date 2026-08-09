@@ -75,10 +75,10 @@ def add_cmd(
         console.print("[bold cyan]Adding a new job application (interactive mode)[/bold cyan]\n")
 
         while not company:
-            company = typer.prompt("Company name").strip()
+            company = typer.prompt("Company").strip()
 
         while not role:
-            role = typer.prompt("Job title / Role").strip()
+            role = typer.prompt("Role").strip()
 
         platform_input = typer.prompt("Platform (e.g. LinkedIn, Indeed, Justjoin.it)", default="", show_default=False).strip()
         platform = platform_input if platform_input else None
@@ -88,7 +88,7 @@ def add_cmd(
         try:
             status = ApplicationStatus.from_string(status_input)
         except ValueError:
-            console.print(f"[yellow]Unknown status '{status_input}'. Defaulting to APPLIED.[/yellow]")
+            console.print(f"[yellow]Unknown status '{status_input}'. Defaulting to Applied.[/yellow]")
             status = ApplicationStatus.APPLIED
 
         url_input = typer.prompt("Job URL", default="", show_default=False).strip()
@@ -96,7 +96,7 @@ def add_cmd(
 
         date_applied = typer.prompt("Date applied (YYYY-MM-DD)", default=date.today().isoformat()).strip()
 
-        salary_input = typer.prompt("Salary / Compensation", default="", show_default=False).strip()
+        salary_input = typer.prompt("Compensation", default="", show_default=False).strip()
         salary = salary_input if salary_input else None
 
         notes_input = typer.prompt("Notes", default="", show_default=False).strip()
