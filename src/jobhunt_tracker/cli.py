@@ -170,6 +170,7 @@ def update_cmd(
     salary: Optional[str] = typer.Option(None, "--salary", help="Update compensation"),
     notes: Optional[str] = typer.Option(None, "--notes", "-n", help="Update notes"),
     url: Optional[str] = typer.Option(None, "--url", "-u", help="Update job URL"),
+    date_applied: Optional[str] = typer.Option(None, "--date", "-d", help="Update date applied"),
 ):
     existing = get_application(app_id)
     if not existing:
@@ -183,6 +184,7 @@ def update_cmd(
         salary=salary,
         notes=notes,
         url=url,
+        date_applied=date_applied,
     )
     if updated:
         console.print(f"[bold green]✓[/bold green] Application [cyan]#{app_id}[/cyan] updated successfully.")

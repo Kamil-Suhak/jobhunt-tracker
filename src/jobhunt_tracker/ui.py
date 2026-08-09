@@ -29,14 +29,14 @@ def render_table(applications: Sequence[JobApplication], title: str = "Job Appli
         console.print("[dim]No applications found.[/dim]")
         return
 
-    table = Table(title=title, show_header=True, header_style="bold magenta", expand=True)
-    table.add_column("ID", style="dim", width=4, justify="right")
+    table = Table(title=title, show_header=True, header_style="bold magenta", expand=True, show_lines=True)
+    table.add_column("ID", style="dim", width=2, justify="right")
     table.add_column("Company", style="bold white", min_width=15)
     table.add_column("Role", style="bold cyan", min_width=18)
     table.add_column("Platform", style="blue", min_width=12)
     table.add_column("Status", justify="center", width=14)
-    table.add_column("Date Applied", style="dim", width=12, justify="center")
-    table.add_column("Salary", style="green", width=12)
+    table.add_column("Date Applied", style="dim", width=10, justify="center")
+    table.add_column("Salary", style="green", width=8)
     table.add_column("Notes", style="dim italic", max_width=25)
 
     for app in applications:

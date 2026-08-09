@@ -102,7 +102,7 @@ def list_applications(
         term = f"%{search}%"
         params.extend([term, term, term, term])
 
-    query += " ORDER BY date_applied DESC, id DESC"
+    query += " ORDER BY id ASC"
 
     with get_connection(db_path) as conn:
         cursor = conn.execute(query, params)
