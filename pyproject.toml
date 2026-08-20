@@ -9,7 +9,7 @@ description = "A sleek command-line job application tracker built with Typer, Ri
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
-    { name = "Kamil" }
+    { name = "Kamil Suhak" }
 ]
 dependencies = [
     "typer>=0.9.0",
